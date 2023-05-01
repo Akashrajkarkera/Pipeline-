@@ -3,18 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
+                sh echo "Building the project"
+                git branch:'master',url:'https://github.com/Akashrajkarkera/Pipeline-.git'
+                sh 'ls'
             }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Testing..."'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying..."'
-            }
-        }
+        } 
     }
 }
