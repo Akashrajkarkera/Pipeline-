@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Git Checkout') {
+        stage('build') {
             steps {
                 sh echo "Building the project"
                 git branch:'master', url:'https://github.com/Akashrajkarkera/Pipeline-.git'
