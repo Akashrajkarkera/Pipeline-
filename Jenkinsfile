@@ -1,12 +1,22 @@
 pipeline {
     agent any
+
     stages {
-        stage('build') {
+        stage('Fetch Jenkinsfile') {
             steps {
-                echo 'building the project'
-                git branch:'master', url:'https://github.com/Akashrajkarkera/Pipeline-.git'
-                sh 'ls'
+                script {
+                    git url: 'https://github.com/Akashrajkarkera/Pipeline-.git', branch: 'main'
+                    sh "cp Jenkinsfile jenkinsfile_dir/"
+                }
             }
-        } 
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo "Building the project"'
+            }
+        }
+
+        // Add more stages for testing, deploying, etc.
     }
 }
