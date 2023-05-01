@@ -4,7 +4,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 sh echo "Building the project"
-                git credentialsId: 'github', url:'https://github.com/Akashrajkarkera/Pipeline-.git'
+                git branch:'master', url:'https://github.com/Akashrajkarkera/Pipeline-.git'
                 sh 'ls'
             }
         } 
